@@ -1,0 +1,10 @@
+.settings
+Reports/
+Report/
+target/
+TestOutput/
+test-output/
+TestScreenshots/
+.classpath
+.project
+EmailableReport.zip

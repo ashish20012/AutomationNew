@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is testNG configuration file in which we are defining Test
+Suits,Input Params and Clasess and Method to be tested-->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Phoenix Suite">
+	<parameter name="url" value="https://zzrq-006.dx.commercecloud.salesforce.com/s/gaussian-fit/en-sg/homeshow" />
+	<parameter name="email" value="satyam.mittal+2@ranosys.com" />
+	<parameter name="password" value="S@tyam123" />
+	<parameter name="productName" value="Men Bomber Jacket"></parameter>
+	<parameter name="productColor" value="black"></parameter>
+	<parameter name="categoryName" value="Clothing"></parameter>
+	<parameter name="productSize" value="s"></parameter>
+	<parameter name="priceFilter" value="45"></parameter>
+	<parameter name="productColorFilter" value="Brown"></parameter>
+	<parameter name="productNameOnQuickView" value="Men Bomber Jacket"></parameter>
+	<parameter name="expectedTermsAndConditionsUrl" value="https://zzrq-006.dx.commercecloud.salesforce.com/s/gaussian-fit/en-sg/terms.html"></parameter>
+	<parameter name="expectedCreateAnAccountUrl" value="https://zzrq-006.dx.commercecloud.salesforce.com/s/gaussian-fit/en-sg/register"></parameter>
+	<parameter name="forgotEmail" value="kumar.ashish@ranosys.com"></parameter>
+	<parameter name="expectedLoginUrl" value="https://zzrq-006.dx.commercecloud.salesforce.com/s/gaussian-fit/en-sg/login?rurl=3"></parameter>
+	<parameter name="wishlistEmptyMessageText" value="You have no items in your Wishlist"></parameter>
+	<parameter name="productColorOnMiniCart" value="Color: Black"></parameter>
+	<parameter name="productSizeOnMiniCart" value="Size: S"></parameter>
+	<parameter name="productQtyBoxMini" value="2"></parameter>
+	<parameter name="itemCounterOnMiniCart" value="1"></parameter>
+	<parameter name="expectedEmailValidationGuestLogin" value="Please enter an Email"></parameter>
+	<parameter name="couponCodeTextBoxOnGuestLogin" value="Test_Coupon"></parameter>
+	<parameter name="couponCodeValidationMessage" value="No coupon code entered"></parameter>
+	<parameter name="couponCodeSuccessMessage" value="Applied"></parameter>
+	<!-- Shipping Address Entry-->
+	<parameter name="firstName" value="Ashish"></parameter>
+	<parameter name="secondName" value="Kumar"></parameter>
+	<parameter name="addressLineOne" value="Nirman Nagar"></parameter>
+	<parameter name="addressLineTwo" value="Singapore"></parameter>
+	<parameter name="selectCountry" value="Singapore"></parameter>
+	<parameter name="zipCode" value="238858"></parameter>
+	<parameter name="phoneNumber" value="8058154201"></parameter>
+	<!-- Billing Address Entry-->
+	<parameter name="firstNameBilling" value="Jai"></parameter>
+	<parameter name="lastNameBilling" value="Singh"></parameter>
+	<parameter name="addressLineOneBilling" value="Jaipur"></parameter>
+	<parameter name="addressLineTwoBilling" value="Raj"></parameter>
+	<parameter name="zipCodeBilling" value="238858"></parameter>
+	<parameter name="phoneBilling" value="8058154201"></parameter>
+
+	<!-- Card Number Entry-->
+	<parameter name="cardNumber" value="4111111111111111"></parameter>
+	<parameter name="expiryDate" value="03/30"></parameter>
+	<parameter name="securityCode" value="737"></parameter>
+	<parameter name="nameOnCard" value="Ashish Kumar"></parameter>
+
+
+	<test name="Phoenix Home Page Smoke " preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixHomePageSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix Login Page Smoke" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixLoginSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix PLP smoke" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixPLPSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix quick view popup on PLP" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixQuickViewPLPPopupSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix Forgot Password" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixForgotPasswordSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix Wishlist Smoke" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixWishlistSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix wishlist Edit Popup" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixWishlistEditSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix Mini Cart Verification" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixMiniCartSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix Checkout As Guest Login Page Verification" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixCheckoutLoginSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix Shipping Address Verification" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixShippingAddressSmoke" />
+		</classes>
+	</test>
+	<test name="Phoenix Payment GetWay Verification" preserve-order="true">
+		<classes>
+			<class name="com.ranosys.phoenix.script.PhoenixBillingAddressSmoke" />
+		</classes>
+	</test>
+
+</suite> <!--
+Suite -->

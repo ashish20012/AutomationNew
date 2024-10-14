@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ranosys.phoenix</groupId>
+	<artifactId>Phoenix</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>Phoenix</name>
+	
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+	<dependencies>
+
+		<!-- Selenium is required to Automate the Web browser -->
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.23.0</version>
+		</dependency>
+
+
+		<!-- WebDriverManager is a library designed to automate the management
+		of WebDriver binaries, which are required to run Selenium tests on
+		different browsers. Instead of manually downloading and setting the
+		paths for WebDriver executables (like ChromeDriver, GeckoDriver for
+		Firefox, etc.), WebDriverManager simplifies this process by
+		automatically downloading the required WebDriver binary and configuring
+		the WebDriver instance at runtime. -->
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.9.1</version>
+		</dependency>
+
+		<!-- TestNG is a powerful testing framework inspired by JUnit and NUnit
+		that helps us to run before/after tests, by grouping the tests using
+		annotations and can generate reports. It also supports Data-driven
+		testing, Parallel execution, and Parametrization. -->
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.10.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- ExtentReports library, you can create beautiful, interactive and
+		detailed reports for your tests. Add events, screenshots, tags, devices,
+		authors or any other relevant information -->
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.2</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Allows extensive configuration options for specifying which
+				tests to run, including test patterns, groups, and individual
+				test methods.-->
+				<!-- https://maven.apache.org/surefire/maven-surefire-plugin/ -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.3.1</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
